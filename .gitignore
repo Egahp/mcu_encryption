@@ -1,0 +1,21 @@
+
+# 过滤 MDK 生成文件
+/.vscode
+MDK-ARM/*
+
+# 保留 MDK 工程文件
+!*.uvprojx
+!*.uvoptx
+!*.c
+!*.s
+!**/RTE
+
+
+# 过滤文档
+html/
+latex/
+
+*.zip
+
+
+
