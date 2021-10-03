@@ -1,15 +1,18 @@
 # MCU Encryption
 
-针对不具有 ARM TrustZone 功能或者 Secure Boot功能的单片机设计的<br>
-轻量级具有安全加密以及安全升级功能的 Bootloader
+针对不具有 **ARM TrustZone** 功能或者 **Secure Boot** 功能的单片机设计的<br>
+轻量级具有安全加密以及安全升级功能的 **Bootloader**
+<br>
 
-# 版本更新历史
+## 版本更新历史
 
 版本|作者|时间|描述
 ----|----|----|----
 0.0.1|Egahp|2021.10.01|创建项目
 
-# 项目进程
+<br>
+
+## 项目进程
 
 - [ ] 构建USB HID通讯
 - [ ] 唯一ID的实时运算读取
