@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "include.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,14 +83,14 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+	debug_log_init();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_CRC_Init();
   MX_SPI1_Init();
-//  MX_USB_DEVICE_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -99,8 +99,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(LED_BLUE_GPIO_Port,LED_BLUE_Pin);
-	  HAL_Delay(100);
+	  LOG_D("hello world\r\n");
+	  LOG_I("hello world\r\n");
+	  LOG_W("hello world\r\n");
+	  LOG_E("hello world\r\n");
+	  HAL_Delay(1000);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -164,8 +168,9 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+	LOG_E("Error Handler\r\n");
   /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
+//  __disable_irq();
   while (1)
   {
   }
