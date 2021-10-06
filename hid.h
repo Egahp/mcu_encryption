@@ -1,8 +1,9 @@
 
-char ReportDescriptor[34] = {
+char ReportDescriptor[36] = {
     0x06, 0x00, 0xff,              // USAGE_PAGE (Vendor Defined Page 1)
     0x09, 0x01,                    // USAGE (Vendor Usage 1)
     0xa1, 0x01,                    // COLLECTION (Application)
+    0x85, 0x01,                    // Report ID (1)
     0x09, 0x01,                    //   USAGE (Vendor Usage 1)
     0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
     0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)

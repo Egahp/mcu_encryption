@@ -69,13 +69,13 @@
 /*---------- -----------*/
 #define USBD_MAX_STR_DESC_SIZ     512U
 /*---------- -----------*/
-#define USBD_DEBUG_LEVEL     0U
+#define USBD_DEBUG_LEVEL     3U
 /*---------- -----------*/
-#define USBD_SELF_POWERED     1U
+#define USBD_SELF_POWERED     0U
 /*---------- -----------*/
-#define USBD_CUSTOMHID_OUTREPORT_BUF_SIZE     1024U
+#define USBD_CUSTOMHID_OUTREPORT_BUF_SIZE     0x40U
 /*---------- -----------*/
-#define USBD_CUSTOM_HID_REPORT_DESC_SIZE     34U
+#define USBD_CUSTOM_HID_REPORT_DESC_SIZE     36U
 /*---------- -----------*/
 #define CUSTOM_HID_FS_BINTERVAL     0x1U
 

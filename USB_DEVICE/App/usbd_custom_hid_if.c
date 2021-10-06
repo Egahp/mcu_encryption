@@ -95,6 +95,7 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
     0x06, 0x00, 0xff,      // USAGE_PAGE (Vendor Defined Page 1)
     0x09, 0x01,            // USAGE (Vendor Usage 1)
     0xa1, 0x01,            // COLLECTION (Application)
+    0x85, 0x01,            // Report ID (1)
     0x09, 0x01,            //   USAGE (Vendor Usage 1)
     0x15, 0x00,            //   LOGICAL_MINIMUM (0)
     0x26, 0xff, 0x00,      //   LOGICAL_MAXIMUM (255)
@@ -140,7 +141,6 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 static int8_t CUSTOM_HID_Init_FS(void);
 static int8_t CUSTOM_HID_DeInit_FS(void);
 static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state);
-static int8_t CUSTOM_HID_SendReport_FS(uint8_t *report, uint16_t len);
 
 /**
   * @}

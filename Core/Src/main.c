@@ -21,12 +21,16 @@
 #include "main.h"
 #include "crc.h"
 #include "spi.h"
+#include "tim.h"
 #include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "include.h"
+#include "lvgl.h"
+#include "lv_port_disp.h"
+#include "lv_demo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,8 +94,18 @@ int main(void)
   MX_GPIO_Init();
   MX_CRC_Init();
   MX_SPI1_Init();
-  MX_USB_DEVICE_Init();
+  MX_TIM7_Init();
+  // MX_USB_DEVICE_Init();
+  
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim7);
+  
+  
+  lv_init();
+  lv_port_disp_init();
+  lv_demo_benchmark();
+  
+
 
   /* USER CODE END 2 */
 
@@ -99,12 +113,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  LOG_D("hello world\r\n");
-	  LOG_I("hello world\r\n");
-	  LOG_W("hello world\r\n");
-	  LOG_E("hello world\r\n");
-	  HAL_Delay(1000);
-
+    lv_task_handler();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -158,7 +167,14 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (htim->Instance == htim7.Instance)
+  {
+    lv_tick_inc(1);
+	  HAL_GPIO_TogglePin(LED_BLUE_GPIO_Port,LED_BLUE_Pin);
+  }
+}
 /* USER CODE END 4 */
 
 /**
