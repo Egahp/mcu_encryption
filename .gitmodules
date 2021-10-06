@@ -1,0 +1,4 @@
+[submodule "Middlewares/lvgl"]
+	path = Middlewares/lvgl
+	url = git@github.com:Egahp/lvgl.git
+	branch = v8.0.2

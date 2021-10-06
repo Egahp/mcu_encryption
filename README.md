@@ -16,9 +16,10 @@
 
 - [x] 构建Debug框架
 - [x] 构建USB HID通讯
+- [x] 移植LVGL
 - [ ] 唯一ID的实时运算读取
 - [ ] 唯一ID检测触发模块
-- [ ] CRC固件检验
+- [ ] CRC检验
 - [ ] BootLoader功能
 - [ ] 通过USB HID 的升级功能
 - [x] 安全传输，TEA 加密
